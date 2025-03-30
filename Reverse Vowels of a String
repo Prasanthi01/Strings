@@ -1,0 +1,29 @@
+class Solution {
+public:
+    string reverseVowels(string s) {
+       int n=s.size();
+       stack<char>st;
+       for(int i=0;i<n;i++)
+       {
+          char c=s[i];
+          if(c=='I' ||c=='i'|| c=='E'||c=='e'||c=='o'||c=='O'||c=='A'||c=='a'||c=='U'||c=='u')
+          {
+            st.push(c);
+          }
+       } 
+       string ans=s;
+       for(int i=0;i<n;i++)
+       {
+        char c=ans[i];
+         if(!st.empty())
+         {
+            if(c=='I' ||c=='i'|| c=='E'||c=='e'||c=='o'||c=='O'||c=='A'||c=='a'||c=='U'||c=='u'){
+                ans[i]=st.top();
+                st.pop();
+
+            }
+         }
+       }
+       return ans;
+    }
+};
